@@ -143,7 +143,7 @@ public class Student {
 	 * @param right is the pointer to the right child
 	 */
 	public void setRight(Student right) {
-		this.left = right;
+		this.right = right;
 	}
 	
 	/**
@@ -219,10 +219,53 @@ public class Student {
 	}
 	
 	/**
-	 * This method can be used to show the student's last name and their id
+	 * This method can be used to show the student and all of their information, formatted to match the output headers
 	 * 
 	 */
 	public String toString() {
-		return this.lastName + ", " + this.getId();
+		
+		// Filling name with spaces to align properly
+		StringBuffer b1 = new StringBuffer();
+		String printName;
+		for(int i = 0; i < 16; i++) {
+			if(i < this.lastName.length()) {
+				b1.append(this.lastName.charAt(i));
+			}
+			else {
+				b1.append(' ');
+			}
+		}
+		
+		// Filling Id with spaces to align properly
+		String printId;
+		StringBuffer b2 = new StringBuffer();
+		String temp = this.getId() + "";
+		for(int i = 0; i < 2; i++) {
+			if(i < temp.length()) {
+				b2.append(temp.charAt(i));
+			}
+			else {
+				b2.append(' ');
+			}
+		}
+		
+		// Filling program with spaces to align properly
+		String printProgram;
+		StringBuffer b3 = new StringBuffer();
+		for(int i = 0; i < 3; i++) {
+			if(i < this.program.length()) {
+				b3.append(program.charAt(i));
+			}
+			else {
+				b3.append(' ');
+			}
+		}
+		
+		// Reformatted student details
+		printName = b1.toString();
+		printId = b2.toString();
+		printProgram = b3.toString();
+		
+		return printId + "    " + printName + this.getNumber() + "         " + this.getHomeDepartment() + "              " + printProgram + "         " + this.getYear();
 	}	
 }

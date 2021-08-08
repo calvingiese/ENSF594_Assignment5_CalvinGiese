@@ -1,0 +1,34 @@
+                        In-Order Traversal
+
+Id    Last Name       Number      Home Department     Program      Year
+1     Appleford       8503881         0251              EST         1
+2     Banks           8500453         0251              EST         1
+3     Bannister       8301164         0251              EST         1
+4     Black           8499120         0341              RST         1
+5     Card            8422991         0045              JA          2
+6     Doyle           8399000         0334              ENT         1
+7     Fisher          8508883         0341              TXT         1
+8     Green           8400912         0045              RFM         1
+9     Hall            8488431         0341              RST         1
+10    Hopper          8322189         0251              CT          1
+11    Johnston        8422911         0341              RST         1
+12    Jones           8306700         0251              CT          2
+13    Jordan          8399129         0334              ENT         1
+14    LaPorte         8400342         0045              JA          1
+15    Last            8300500         0251              CT          1
+16    McKay           8534534         0251              CT          1
+17    Morrison        8322889         0045              JA          3
+18    Newman          8322188         0251              CT          2
+19    Phillips        8412094         0251              EST         1
+20    Schafer         8212399         0251              EST         1
+21    Smith           8400001         0251              CT          2
+22    Sykes           8255999         0451              WET         2
+23    Walker          8300000         0341              TXT         1
+24    Waters          8499341         0341              TXT         1
+25    Watson          8400000         0334              ENT         2
+26    Watts           8500060         0341              RST         1
+27    West            8500000         0334              ENT         1
+28    Weston          8301234         0334              ENT         2
+29    White           8367091         0341              TXT         1
+30    Woods           8388231         0251              CT          1
+31    Zot             8599999         0451              WET         1

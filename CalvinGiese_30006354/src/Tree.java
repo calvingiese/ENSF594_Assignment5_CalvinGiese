@@ -20,11 +20,17 @@ public class Tree {
 	private Student root;
 	
 	/**
+	 * The output string of students from in order traversing
+	 */
+	private String inOrder;
+	
+	/**
 	 * Constructs the tree, beginning with a null root
 	 * 
 	 */
 	public Tree() {
 		setRoot(null);
+		this.inOrder = "";
 	}
 	
 	/**
@@ -109,10 +115,30 @@ public class Tree {
 	 * @param cursor is the student used to traverse the tree
 	 */
 	public void inOrderTraverse(Student cursor) {
+		StringBuffer b1 = new StringBuffer();
 		if(cursor!= null) {
 			inOrderTraverse(cursor.getLeft());
-			System.out.println(cursor);
+			b1.append(cursor);
+			addInOrder(b1.toString());
 			inOrderTraverse(cursor.getRight());
 		}
+	}
+	
+	/**
+	 * Adds student to string for the in-order traversal output
+	 * 
+	 * @param addStudent is the student to add to the list
+	 */
+	private void addInOrder(String addStudent) {
+		this.inOrder = this.inOrder + '\n' + addStudent;
+	}
+	
+	/**
+	 * Method used to retrieve the current list of students using in order traversal
+	 * 
+	 * @return the list of students in alphabetical order, all in one string
+	 */
+	public String getInOrder() {
+		return this.inOrder;
 	}
 }

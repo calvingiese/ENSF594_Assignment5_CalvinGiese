@@ -71,14 +71,36 @@ public class TreeApp {
 			Student myStudent = new Student(textArray[i], id[i]);
 			myStudent.setLastName(textArray[i]);
 			myStudent.setId(id[i]);
+			myStudent.setNumber(textArray[i]);
+			myStudent.setHomeDepartment(textArray[i]);
+			myStudent.setProgram(textArray[i]);
+			myStudent.setYear(textArray[i]);
 			newTree.insert(myStudent);
 		}
 		
-		// Uses Depth-First, In-order traversal of the tree and prints the results to an output file
-		System.out.println('\n' + "In-Order Traversal" + '\n');
+		// Uses Depth-First, In-order traversal of the tree and adds title, headers and student's to output string
+		TextPrinter inOrderPrinter = new TextPrinter();
+		StringBuffer inOrder = new StringBuffer();
+		inOrder.append("                        In-Order Traversal");
+		inOrder.append('\n');
+		inOrder.append('\n');
+		inOrder.append("Id    Last Name       Number      Home Department     Program      Year");
 		newTree.inOrderTraverse(newTree.getRoot());
+		String outputInOrder = newTree.getInOrder();
+		inOrder.append(outputInOrder);
+
+		// Uses Level-by-Level traversal of the tree and adds title, headers and student's to output string
+		TextPrinter levelPrinter = new TextPrinter();
+		StringBuffer level = new StringBuffer();
+		level.append("                      Level-by-Level Traversal");
+		level.append('\n');
+		level.append('\n');
+		level.append("Id    Last Name       Number      Home Department     Program      Year");
 		
-		// Uses Level-by-Level traversal of the tree and prints the results to an output file
-		
+		// Prints both traversal methods to output files
+		String inorderPrint = inOrder.toString();
+		inOrderPrinter.inOrderPrint(inorderPrint);
+		String levelPrint = level.toString();
+		levelPrinter.levelPrint(levelPrint);
 	}
 }
