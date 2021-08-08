@@ -91,16 +91,20 @@ public class TreeApp {
 
 		// Uses Level-by-Level traversal of the tree and adds title, headers and student's to output string
 		TextPrinter levelPrinter = new TextPrinter();
-		StringBuffer level = new StringBuffer();
-		level.append("                      Level-by-Level Traversal");
-		level.append('\n');
-		level.append('\n');
-		level.append("Id    Last Name       Number      Home Department     Program      Year");
+		StringBuffer levelOrder = new StringBuffer();
+		levelOrder.append("                      Level-by-Level Traversal");
+		levelOrder.append('\n');
+		levelOrder.append('\n');
+		levelOrder.append("Id    Last Name       Number      Home Department     Program      Year");
+		levelOrder.append('\n');
+		newTree.levelOrderTraverse(newTree.getRoot());
+		String outputLevelOrder = newTree.getLevelOrder();
+		levelOrder.append(outputLevelOrder);
 		
 		// Prints both traversal methods to output files
 		String inorderPrint = inOrder.toString();
 		inOrderPrinter.inOrderPrint(inorderPrint);
-		String levelPrint = level.toString();
+		String levelPrint = levelOrder.toString();
 		levelPrinter.levelPrint(levelPrint);
 	}
 }

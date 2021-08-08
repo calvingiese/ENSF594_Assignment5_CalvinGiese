@@ -14,12 +14,39 @@
 
 public class Student {
 
+	/**
+	 * The student number from the student information string
+	 */
 	private String number;
+	
+	/**
+	 * The student last name from the student information string
+	 */
 	private String lastName;
+	
+	/**
+	 * The student home department from the student information string
+	 */
 	private String homeDepartment;
+	
+	/**
+	 * The student program from the student information string
+	 */
 	private String program;
+	
+	/**
+	 * The student year from the student information string
+	 */
 	private String year;
+	
+	/**
+	 * The student id which is the alphabetical placement of their last name in relation to the other students
+	 */
 	private int id;
+	
+	/**
+	 * The left and right pointers for each student
+	 */
 	private Student left, right;
 	
 	/**
@@ -266,6 +293,7 @@ public class Student {
 		printId = b2.toString();
 		printProgram = b3.toString();
 		
+		// Final student list format that includes all of their information
 		return printId + "    " + printName + this.getNumber() + "         " + this.getHomeDepartment() + "              " + printProgram + "         " + this.getYear();
 	}	
 }

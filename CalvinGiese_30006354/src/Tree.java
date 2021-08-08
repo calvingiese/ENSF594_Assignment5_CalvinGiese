@@ -25,12 +25,24 @@ public class Tree {
 	private String inOrder;
 	
 	/**
+	 * The output string of students from in level-order traversing
+	 */
+	private String levelOrder;
+	
+	/**
+	 * The number of students in the tree
+	 */
+	private int count;
+	
+	/**
 	 * Constructs the tree, beginning with a null root
 	 * 
 	 */
 	public Tree() {
 		setRoot(null);
 		this.inOrder = "";
+		this.levelOrder = "";
+		this.count = 0;
 	}
 	
 	/**
@@ -120,6 +132,7 @@ public class Tree {
 			inOrderTraverse(cursor.getLeft());
 			b1.append(cursor);
 			addInOrder(b1.toString());
+			this.count++;
 			inOrderTraverse(cursor.getRight());
 		}
 	}
@@ -140,5 +153,39 @@ public class Tree {
 	 */
 	public String getInOrder() {
 		return this.inOrder;
+	}
+	
+	/**
+	 * This method is used to traverse the tree using level order and adds the students to the output string in the correct order.
+	 * 
+	 * @param root is the root student of the tree
+	 */
+	public void levelOrderTraverse(Student root) {
+		StringBuffer b1 = new StringBuffer();
+		Queue newQueue = new Queue(this.count);
+		newQueue.enqueue(root);
+		while(newQueue.size() > 0) {
+			Student first = newQueue.dequeue();
+			b1.append(first);
+			b1.append('\n');
+			Student leftChild = first.getLeft();
+			Student rightChild = first.getRight();
+			if(leftChild != null) {
+				newQueue.enqueue(leftChild);
+			}
+			if(rightChild != null) {
+				newQueue.enqueue(rightChild);
+			}
+		}
+		this.levelOrder = b1.toString();
+	}
+	
+	/**
+	 * Method used to retrieve the current list of students using level order traversal
+	 * 
+	 * @return the list of students in order of tree levels
+	 */
+	public String getLevelOrder() {
+		return this.levelOrder;
 	}
 }

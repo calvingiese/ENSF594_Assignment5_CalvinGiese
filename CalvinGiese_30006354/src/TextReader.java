@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class TextReader {
 	
 	/**
-	 * The array of to fill with words in the input file.
+	 * The array of to fill with lines in the input file.
 	 */
 	private String[] arrString;
 	
