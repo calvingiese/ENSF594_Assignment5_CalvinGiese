@@ -4,6 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Class Name: TextReader
+ * 
+ * Reads an input file which contains a list of students and their corresponding details.
+ * 
+ * This class is used read in the input file and return an array of strings, one for each student.
+ * 
+ * @author Calvin Giese
+ * @version version 1.0
+ * @since August 7, 2021
+ *
+ */
+
 public class TextReader {
 	
 	/**
